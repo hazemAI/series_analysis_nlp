@@ -118,16 +118,7 @@ def main():
             with gr.Column():
                 gr.HTML("<h1>Character Chatbot</h1>")
                 gr.ChatInterface(chat_with_character_chatbot)
-                with gr.Row():
-                    with gr.Column():
-                        chatbot_ouptut = gr.Textbox(
-                            label="Chatbot Response")
-                    with gr.Column():
-                        your_message = gr.Textbox(label='Your message:') 
-                        text_to_classify = gr.Textbox(label='Text input')
-                        classify_text_button = gr.Button("Classify Jutsu")
-                        classify_text_button.click(classify_text, inputs=[
-                                                   text_classification_model, text_classification_data_path, text_to_classify], outputs=[text_classification_ouptut])
+                
 
     iface.launch(share=True)
 
